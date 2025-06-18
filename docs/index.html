@@ -16,6 +16,7 @@
 </head>
 <body>
     <div class="container">
+        <button id="menu-toggle" aria-label="Toggle navigation">Menu</button>
         <div class="sidebar">
             <nav class="sidebar-nav">
                 <a href="#currently">Currently</a>
@@ -488,6 +489,10 @@
         // Handle hash changes
         window.addEventListener('hashchange', () => {
             showSection(window.location.hash);
+        });
+
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.querySelector('.sidebar-nav').classList.toggle('show');
         });
 
         // Make content editable on double-click
